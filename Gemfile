@@ -21,13 +21,16 @@ group :assets do
   gem 'uglifier', '1.2.3'
 end
 
-gem 'jquery-rails', '2.0.0'
-
 group :test do
   gem 'capybara', '1.1.2'
   gem 'factory_girl_rails', '1.4.0'
 end
 
+# CloudFoundry  works with MySQL
 group :production do
-  gem 'pg', '0.12.2'
+  gem 'mysql2'
 end
+
+# For Ruby 1.9 Cloud Foundry requires a tweak to the jquery-rails gem.
+# gem 'jquery-rails', '2.0.0'
+gem 'cloudfoundry-jquery-rails'
